@@ -47,7 +47,14 @@ import rx.schedulers.Schedulers;
 public class MainActivity extends BaseActivity {
 
     private static final String JPG = ".jpg";
-    private static final String LOVE = "心动是等你的留言，渴望是常和你见面，甜蜜是和你小路流连，温馨是看着你清澈的双眼，爱你的感觉真的妙不可言！";
+    private static final String LOVE = "我试图用那些漂亮的句子来形容你。但是不行\n" +
+            "我字字推敲写出长长一段话\n" +
+            "你眉眼一弯熠熠生辉\n" +
+            "就让我觉得。不行\n" +
+            "这些文字写不出你眼里的星辰\n" +
+            "写不出你唇角的春风\n" +
+            "无论哪个词\n" +
+            "都及不上你半分的惊艳。";
     private static final int SNOW_BLOCK = 1;
     public static final String URL = "file:///android_asset/index.html";
     private Canvas mCanvas;
@@ -277,6 +284,7 @@ public class MainActivity extends BaseActivity {
                 .subscribe(new Subscriber<Long>() {
                     @Override
                     public void onCompleted() {
+                        mProgressBar.setVisibility(View.GONE);
                         mTypeTextView.start(MainActivity.LOVE);
                     }
 
